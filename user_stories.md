@@ -19,6 +19,10 @@ As a *Developer* I want to I want to create a list view of three products to pre
 
 As a *Developer* I want to have the group members choose which product, of the three displayed images, that they would be most likely to purchase, and then store, calculate, and visually display the resulting data.
 
+As a *Developer* I want to keep the product selection process as untainted as possible, and will not allow any results to be shown to users until there have been a total of 25 selections made.
+
+As a *Developer* I will want a constructor function that creates an object associated with each image, and has properties for the name of the image, its filepath, the number of times it has been shown, and the number of times it has been clicked.
+
 ---
 # Focus Group Participant
 As a *Focus Group Participant* I want to select my favorite product so that Bus-Mall will better know what I want.
