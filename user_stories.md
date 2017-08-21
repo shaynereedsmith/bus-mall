@@ -25,4 +25,10 @@ As a *Developer* I will want a constructor function that creates an object assoc
 
 ---
 # Focus Group Participant
-As a *Focus Group Participant* I want to select my favorite product so that Bus-Mall will better know what I want.
+As a *Focus Group Participant* I want to select my favorite product so that Bus-Mall will better know what I am interested in buying.
+
+As a *Focus Group Participant* I want an interface that is pleasing and easy to use because I'm not interested in fumbling with an application.
+
+As a *Focus Group Participant* I want clear and concise directions so I'm not confused.
+
+As a *Focus Group Participant* I want to know the results of my choices because that is a complete user experience. 
