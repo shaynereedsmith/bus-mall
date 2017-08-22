@@ -71,8 +71,16 @@ function productSelector(event) {
         productNumber[i].timesClicked++;
         totalClicks++;
         renderThreeProducts();
-      } else {
+      } else if (totalClicks === 25) {
         proSpace.removeEventListener('click', productSelector, true);
+        var listAnchor = document.getElementById('results');
+        var resultsList = document.createElement('ul');
+        listAnchor.appendChild(resultsList);
+        for (var i = 0; i < productNumber.length; i++) {
+          var li = document.createElement('li');
+          li.innerText = productNumber[i].timesClicked + ' votes for ' + productNumber[i].name;
+          resultsList.appendChild(li);
+        }
       }
     }
   }
@@ -82,52 +90,3 @@ var proSpace = document.getElementById('productSpace');
 proSpace.addEventListener('click', productSelector);
 
 renderThreeProducts();
-
-// ORIGINAL CODE BELOW, UPDATED CODE ABOVE
-
-// function renderThreeProducts() {
-//   var imageOne = document.getElementById('one');
-//   var firstImage = document.createElement('img');
-//   var randomOne = Math.floor(Math.random() * productNumber.length);
-//   firstImage.src = productNumber[randomOne].filepath;
-//   imageOne.appendChild(firstImage);
-//   var imageTwo = document.getElementById('two');
-//   var secondImage = document.createElement('img');
-//   var randomTwo = Math.floor(Math.random() * productNumber.length);
-//   while (randomOne === randomTwo) {
-//     randomTwo = Math.floor(Math.random() * productNumber.length);
-//   }
-//   secondImage.src = productNumber[randomTwo].filepath;
-//   imageTwo.appendChild(secondImage);
-//   var imageThree = document.getElementById('three');
-//   var thirdImage = document.createElement('img');
-//   var randomThree = Math.floor(Math.random() * productNumber.length);
-//   while (randomThree === randomTwo || randomThree === randomOne) {
-//     randomThree = Math.floor(Math.random() * productNumber.length);
-//   };
-//   thirdImage.src = productNumber[randomThree].filepath;
-//   imageThree.appendChild(thirdImage);
-//   lastThree = [];
-//   lastThree.push(randomOne, randomTwo, randomThree);
-// };
-
-// renderThreeProducts();
-//
-// function voteOne (event) {
-//   console.log(event);
-// }
-// function voteTwo (event) {
-//   console.log(event);
-// }
-// function voteThree (event) {
-//   console.log(event);
-// }
-//
-// var clickOne = document.getElementById('one');
-// clickOne.addEventListener('click', voteOne);
-//
-// var clickTwo = document.getElementById('two');
-// clickTwo.addEventListener('click', voteTwo);
-//
-// var clickThree = document.getElementById('three');
-// clickThree.addEventListener('click', voteThree);
