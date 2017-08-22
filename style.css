@@ -1,7 +1,59 @@
+/*FONTS
+font-family: 'Monoton', cursive;
+font-family: 'Cabin Sketch', cursive;
+font-family: 'Josefin Sans', sans-serif;*/
+
 #productSpace img {
   width: 200px;
+  margin: 1em;
 }
 
 .randomNumberGenerator {
   text-align: center;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  margin: 0;
+  top: 0;
+  text-align: center;
+  background: #03b1c4;
+  box-shadow: 1px 5px 5px #888888;
+}
+
+i {
+  color: #fd408b;
+}
+
+h1 {
+  color: #fd408b;
+  display: inline-block;
+  font-family: 'Monoton', cursive;
+  font-size: 3em;
+  margin: 0;
+  top: 0;
+  padding-left: 0.3em;
+}
+
+section {
+  margin: auto;
+  width: 60%;
+}
+
+h2 {
+  font-family: 'Cabin Sketch', cursive;
+  color: #0167be;
+  font-size: 2em;
+  border-bottom: 4px double #fb0041;
+  padding: 0.5em;
+}
+
+p {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #03b1c4;
+  padding-left: 2em;
+  padding-right: 2em;
 }

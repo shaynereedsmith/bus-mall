@@ -1,5 +1,6 @@
 'use strict';
 
+var maxClicks = 25;
 var productNumber = [];
 var lastThree = [];
 var totalClicks = 0;
@@ -67,11 +68,11 @@ function productSelector(event) {
   event.preventDefault();
   if(event.target.nodeName === 'IMG') {
     for (var i = 0; i < productNumber.length; i++) {
-      if (productNumber[i].id === String(event.target.id) && totalClicks < 25) {
+      if (productNumber[i].id === String(event.target.id) && totalClicks < maxClicks) {
         productNumber[i].timesClicked++;
         totalClicks++;
         renderThreeProducts();
-      } else if (totalClicks === 25) {
+      } else if (totalClicks === maxClicks) {
         proSpace.removeEventListener('click', productSelector, true);
         var listAnchor = document.getElementById('results');
         var resultsList = document.createElement('ul');
@@ -90,3 +91,59 @@ var proSpace = document.getElementById('productSpace');
 proSpace.addEventListener('click', productSelector);
 
 renderThreeProducts();
+
+
+
+
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+var chartConfig = {
+  type: 'horizontalBar',
+  data: {
+    labels: ['Bag', 'Banana', 'Bathroom', 'Boots', 'Breakfast', 'Bubblegum', 'Chair', 'Cthulhu', 'Dog Duck', 'Dragon', 'Pen', 'Pet Sweep', 'Scissors', 'Shark', 'Sweep', 'Tauntaun', 'Unicorn', 'USB', 'Water Can', 'WineGlass'],
+    // x-axis labels for every entry in your data set. It should match up with the number of things you're plotting (if it's a bar chart)
+    datasets: [{ // <-- notice that this can be an array of multiple data sets.
+      // each data set is its own object literal.
+      label: '# of Votes', // <-- the label of this one data set
+      data: [Bag.timesClicked, 19, 3, 5, 2, 3], // <-- where your data actually goes. just the numbers
+      backgroundColor: [ // <-- this can be either one single color or a color for each item in your bar chart.
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 5 // border width in pixels
+    }]
+  },
+  options: {
+    // maintainAspectRatio: false,
+    // animation: {
+    //   duration: 1000
+    // },
+    title: {
+      display: true,
+      text: 'Some stuff and some junk'
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero:true
+        }
+      }]
+    }
+  }
+};
+
+var myChart = new Chart(ctx, chartConfig);
