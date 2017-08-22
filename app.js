@@ -9,7 +9,7 @@ function Product(name, filepath, id) {
   this.filepath = filepath;
   this.id = id;
   this.timesShown = 0;
-  this.tiesClicked = 0;
+  this.timesClicked = 0;
   productNumber.push(this);
   this.imageMaker = function() {
     var anchor = document.getElementById('productSpace');
@@ -48,7 +48,7 @@ var randomNumber = function() {
 
 var renderThreeProducts = function() {
   var anchor = document.getElementById('productSpace');
-  anchor.innerHtml = '';
+  anchor.innerHTML = '';
   var currentThree = [];
   for (var i = 0; i < 3; i++) {
     var randomProduct = productNumber[randomNumber()];
@@ -67,10 +67,12 @@ function productSelector(event) {
   event.preventDefault();
   if(event.target.nodeName === 'IMG') {
     for (var i = 0; i < productNumber.length; i++) {
-      if (productNumber[i].id === String(event.target.id)) {
+      if (productNumber[i].id === String(event.target.id) && totalClicks < 25) {
         productNumber[i].timesClicked++;
         totalClicks++;
         renderThreeProducts();
+      } else {
+        proSpace.removeEventListener('click', productSelector, true);
       }
     }
   }
