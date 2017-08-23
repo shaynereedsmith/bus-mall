@@ -6,6 +6,19 @@ font-family: 'Josefin Sans', sans-serif;*/
 #productSpace img {
   max-width: 150px;
   margin: 1em;
+  border-radius: 0.2em;
+  border: 1px solid #d8d283;
+  transition: box-shadow 0.2s ease-out;
+}
+
+#productSpace img:hover {
+  border-bottom: 2px solid #d8d283;
+  box-shadow: 1px 5px 5px #888888;
+}
+
+#productSpace img:active {
+  border-bottom: 1px solid #d8d283;
+  max-width: 145px;
 }
 
 .randomNumberGenerator {
@@ -17,6 +30,8 @@ body {
 }
 
 header {
+  position: fixed;
+  width: 100%;
   margin: 0;
   top: 0;
   text-align: center;
@@ -40,6 +55,7 @@ h1 {
 
 section {
   margin: auto;
+  margin-top: 5em;
   width: 60%;
 }
 
@@ -62,4 +78,26 @@ p {
   max-width: 50em;
   max-height: 50em;
   margin: auto;
+}
+
+.tab {
+  width: 90px;
+  height: 60px;
+  background: #fd408b;
+  border: 2px solid #fb0041;
+  border-top-right-radius: 0.9em;
+  border-top-left-radius: 0.9em;
+  color: white;
+  position: fixed;
+  top: 179px;
+  box-shadow: 3px -3px 3px #888888;
+  transform: rotate(90deg);
+  left: -50px;
+  text-align: center;
+  padding-top: 0.5em;
+  font-family: 'Monoton', cursive;
+}
+
+.about {
+
 }
