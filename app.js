@@ -101,7 +101,7 @@ function chart(name, data) {
     data: {
       labels: name,
       datasets: [{
-        label: 'Your Votes',
+        label: 'clicked',
         data: data,
         backgroundColor: 'rgba(1, 103, 190, 0.2)',
         borderColor: 'rgba(3, 177, 196, 1)',
@@ -109,11 +109,12 @@ function chart(name, data) {
       }]
     },
     options: {
-      // maintainAspectRatio: false,
       animation: {
-        duration: 5000
+        duration: 3500
       },
       title: {
+        display: true,
+        text: 'Thank you for participating!',
       },
       scales: {
         yAxes: [{
