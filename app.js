@@ -1,6 +1,6 @@
 'use strict';
 
-var maxClicks = 25;
+var maxClicks = 3;
 var productNumber = [];
 var lastThree = [];
 var totalClicks = 0;
@@ -22,26 +22,26 @@ function Product(name, filepath, id) {
   };
 };
 
-var Bag = new Product('bag', 'img/bag.jpg', 'bag');
-var Banana = new Product('banana', 'img/banana.jpg', 'banana');
-var Bathroom = new Product('bathroom', 'img/bathroom.jpg', 'bathroom');
-var Boots = new Product('boots', 'img/boots.jpg', 'boots');
-var Breakfast = new Product('breakfast', 'img/breakfast.jpg', 'breakfast');
-var Bubblegum = new Product('bubblegum', 'img/bubblegum.jpg', 'bubblegum');
-var Chair = new Product('chair', 'img/chair.jpg', 'chair');
-var Cthulhu = new Product('cthulhu', 'img/cthulhu.jpg', 'cthulhu');
-var DogDuck = new Product('dog-duck', 'img/dog-duck.jpg', 'dog-duck');
-var Dragon = new Product('dragon', 'img/dragon.jpg', 'dragon');
-var Pen = new Product('pen', 'img/pen.jpg', 'pen');
-var PetSweep = new Product('pet-sweep', 'img/pet-sweep.jpg', 'pet-sweep');
-var Scissors = new Product('scissors', 'img/scissors.jpg', 'scissors');
-var Shark = new Product('shark', 'img/shark.jpg', 'shark');
-var Sweep = new Product('sweep', 'img/sweep.png', 'sweep');
-var Tauntaun = new Product('tauntaun', 'img/tauntaun.jpg', 'tauntaun');
-var Unicorn = new Product('unicorn', 'img/unicorn.jpg', 'unicorn');
-var Usb = new Product('usb', 'img/usb.gif', 'usb');
-var WaterCan = new Product('water-can', 'img/water-can.jpg', 'water-can');
-var WineGlass = new Product('wine-glass', 'img/wine-glass.jpg', 'wine-glass');
+var Bag = new Product('R2D2 Bag', 'img/bag.jpg', 'bag');
+var Banana = new Product('Banana Slicer', 'img/banana.jpg', 'banana');
+var Bathroom = new Product('TP Tablet Holder', 'img/bathroom.jpg', 'bathroom');
+var Boots = new Product('Boots', 'img/boots.jpg', 'boots');
+var Breakfast = new Product('Easy-make Breakfast', 'img/breakfast.jpg', 'breakfast');
+var Bubblegum = new Product('Meatball Bubblegum', 'img/bubblegum.jpg', 'bubblegum');
+var Chair = new Product('A Chair', 'img/chair.jpg', 'chair');
+var Cthulhu = new Product('Cthulhu Plushy', 'img/cthulhu.jpg', 'cthulhu');
+var DogDuck = new Product('Duck Muzzle', 'img/dog-duck.jpg', 'dog-duck');
+var Dragon = new Product('Dragon Meat', 'img/dragon.jpg', 'dragon');
+var Pen = new Product('Pen Cutlery', 'img/pen.jpg', 'pen');
+var PetSweep = new Product('Pet Sweep', 'img/pet-sweep.jpg', 'pet-sweep');
+var Scissors = new Product('Pizza Scissors', 'img/scissors.jpg', 'scissors');
+var Shark = new Product('Shark Sleeping Bag', 'img/shark.jpg', 'shark');
+var Sweep = new Product('Baby Sweep', 'img/sweep.png', 'sweep');
+var Tauntaun = new Product('Tauntaun Sleeping Bag', 'img/tauntaun.jpg', 'tauntaun');
+var Unicorn = new Product('Unicorn Meat', 'img/unicorn.jpg', 'unicorn');
+var Usb = new Product('Tentacle USB', 'img/usb.gif', 'usb');
+var WaterCan = new Product('Water Can', 'img/water-can.jpg', 'water-can');
+var WineGlass = new Product('Wine Glass', 'img/wine-glass.jpg', 'wine-glass');
 
 var randomNumber = function() {
   return Math.floor(Math.random() * productNumber.length);

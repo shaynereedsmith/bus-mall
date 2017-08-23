@@ -32,7 +32,6 @@ header {
   text-align: center;
   background: #03b1c4;
   box-shadow: 1px 5px 5px #888888;
-  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
 }
 
 i {
