@@ -18,6 +18,8 @@
 
 .randomNumberGenerator {
   text-align: center;
+  min-width: 600px;
+  max-width: 800px;
 }
 
 body {
