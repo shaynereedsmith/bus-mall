@@ -1,6 +1,6 @@
 'use strict';
 
-var maxClicks = 3;
+var maxClicks = 25;
 var productNumber = [];
 var lastThree = [];
 var totalClicks = 0;
@@ -83,18 +83,21 @@ function productSelector(event) {
     for (var i = 0; i < productNumber.length; i++) {
       if (productNumber[i].id === String(event.target.id) && totalClicks < maxClicks) {
         productNumber[i].timesClicked++;
+        productNumber[i].timesShown++;
         totalClicks++;
         renderThreeProducts();
       } else if (totalClicks === maxClicks) {
         proSpace.removeEventListener('click', productSelector, true);
         var data = [];
         var name = [];
+        var percent = [];
         for (var i = 0; i < productNumber.length; i++) {
           data.push(productNumber[i].timesClicked);
           name.push(productNumber[i].name);
+          percent.push((productNumber[i].timesShown / productNumber[i].timesClicked) * 100);
         }
         localStorage.setItem('productNumber', JSON.stringify(productNumber));
-        chart(name, data);
+        chart(name, data, percent);
       }
     }
   }
@@ -105,7 +108,7 @@ proSpace.addEventListener('click', productSelector);
 
 renderThreeProducts();
 
-function chart(name, data) {
+function chart(name, data, percent) {
 
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
@@ -115,16 +118,22 @@ function chart(name, data) {
     data: {
       labels: name,
       datasets: [{
-        label: 'clicked',
+        label: 'Number of Times Clicked',
         data: data,
         backgroundColor: 'rgba(1, 103, 190, 0.2)',
         borderColor: 'rgba(3, 177, 196, 1)',
+        borderWidth: 1
+      }, {
+        label: 'Percent of Times Clicked when Shown',
+        data: percent,
+        backgroundColor: 'rgba(253, 64, 139, 0.2)',
+        borderColor: 'rgba(251, 0, 65, 1)',
         borderWidth: 1
       }]
     },
     options: {
       animation: {
-        duration: 3500
+        duration: 4500
       },
       title: {
         display: true,
