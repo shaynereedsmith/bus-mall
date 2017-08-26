@@ -100,7 +100,7 @@ p {
 
 @keyframes tabmove {
   from {left: -85px;}
-  to {left: -40px;}
+  to {left: -25px;}
   animation-play-state: paused;
 }
 
@@ -111,7 +111,7 @@ p {
 
 @keyframes aboutmove {
   from {left: -360px;}
-  to {left: -60px;}
+  to {left: -35px;}
   animation-play-state: paused;
 }
 
@@ -139,4 +139,9 @@ footer {
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
   color: #fd408b;
+  background: gray;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  margin-top: 5em;
+  border-top: 5px solid lightgray;
 }
